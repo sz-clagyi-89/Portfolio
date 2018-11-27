@@ -1,6 +1,6 @@
 @import "_config.scss";
 @import "_menu.scss";
-
+@import "mobile";
 
 * {
     box-sizing: border-box;
@@ -78,7 +78,7 @@ main {
     position: fixed;
     top: 0;
     width: 100%;
-    opacity: 0.9;
+    // opacity: 0.9;
     visibility: hidden;
 
     &.show {
@@ -101,7 +101,7 @@ main {
     &-nav {
         margin: 0;
         padding: 0;
-        background: darken($primary-color, 5);
+        background: rgba(darken($primary-color, 5), 0.9);
         list-style: none;
         transform: translate3d(0, -100%, 0);
         @include easeOut;
@@ -113,7 +113,7 @@ main {
 
     //// branding side ////
     &-branding {
-        background: $primary-color;
+        background: rgba($primary-color, 0.9);
         transform: translate3d(0, 100%, 0);
         @include easeOut; 
        
@@ -171,5 +171,70 @@ main {
 @for $x from 1 through 4 {
     .nav-item:nth-child(#{$x}) {
         transition-delay: $x * 0.1s;
+    }
+}
+
+
+
+////// MEDIA QUERIES //////
+// Wide screen
+@include mediaXl {
+}
+
+// Desktops & Laptops
+@include mediaLg {
+}
+
+// Tablets 
+@include mediaMd {
+    main {
+        align-items: center;
+        text-align: center;
+
+        .lg-heading {
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+
+    nav ul.menu-nav, 
+    nav div.menu-branding {
+        float: none;
+        width: 100%;
+        min-height: 0;
+        opacity: 1;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .menu-nav {
+        height: 65vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 24px;
+        background: rgba(darken($primary-color, 5), 1);
+        
+    }
+
+    .menu-branding {
+        height: 35vh;
+        transform: translate3d(100%, 0, 0);
+        background: rgba($primary-color, 1);
+    
+        .portrait {
+            background: url('../img/portrait2_small.jpg');
+            background-position: center;
+            background-size: 100%;
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+// SmartPhones
+@include mediaSm {
+    main#home h1 {
+        margin-top: 10vh;
     }
 }
