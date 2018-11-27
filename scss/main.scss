@@ -124,11 +124,11 @@ main {
         .portrait {
             width: 250px;
             height: 250px;
-            background: url('../img/portrait2.jpg');
+            background: url('../img/portrait4.jpg');
             background-position: center;
             background-size: cover;
             border-radius: 50%;
-            border: solid 3px $secondary-color;
+            border: solid 3px #000;
             opacity: 1;
             z-index: 5;
         }
@@ -223,7 +223,7 @@ main {
         background: rgba($primary-color, 1);
     
         .portrait {
-            background: url('../img/portrait2_small.jpg');
+            background: url('../img/portrait4.jpg');
             background-position: center;
             background-size: 100%;
             width: 150px;
