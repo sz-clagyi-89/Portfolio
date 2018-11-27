@@ -9,7 +9,7 @@
 body {
     @include background;
     background: $primary-color;
-    color: #fff;
+    color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -50,7 +50,7 @@ header {
 
 main {
     padding: 4em 4em;
-    height: 100%;
+    min-height: calc(100vh - 60px);
 
     .icons {
         margin-top: 1rem;
@@ -116,7 +116,6 @@ main {
         background: rgba($primary-color, 0.9);
         transform: translate3d(0, 100%, 0);
         @include easeOut; 
-       
         &.show {
         transform: translate3d(0, 0, 0);
         }
@@ -155,7 +154,7 @@ main {
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 400;
-        color: #fff;
+        color: set-text-color($primary-color);
         text-decoration: none;
         @include easeOut;
 
@@ -223,7 +222,7 @@ main {
         background: rgba($primary-color, 1);
     
         .portrait {
-            background: url('../img/portrait4.jpg');
+            background: url('../img/portrait3.jpg');
             background-position: center;
             background-size: 100%;
             width: 150px;
@@ -238,3 +237,63 @@ main {
         margin-top: 10vh;
     }
 }
+
+
+
+////// About Me /////////
+.margin-top .lg-heading {
+    margin-top: 0vh !important;
+}
+
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+    'bioimage bio bio'
+    'app1 app2 app3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image {
+        width: 250px;
+        //height: 250px;
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: #000 3px solid; 
+    }
+    
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+    
+    .app-1 {
+        grid-area: app1;
+    } 
+    
+    .app-2 {
+        grid-area: app2;
+    }
+    
+    .app-3 {
+        grid-area: app3;
+    }
+    
+    .app {
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+    }
+}
+
+
+
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    background: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    height: 60px;
+}
+
+
