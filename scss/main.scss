@@ -281,8 +281,48 @@ main {
     
     .app {
         background: lighten($primary-color, 5);
-        padding: 0.5rem;
+        padding: 1rem;
+        box-sizing: border-box;
         border-bottom: $secondary-color 5px solid;
+
+        h3 {
+            color: $secondary-color;
+            font-weight: 600;
+        }
+
+        span {
+            width: 100%;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+
+            .project-btn {
+                display: inline-block;
+                position: relative;
+                box-sizing: border-box;
+                padding: 0.5rem 1rem;
+                margin: 0 auto;
+                border: $secondary-color 2px solid;
+                font-weight: 600;
+                background: #2b2b2b;
+                //border-radius: 5px;
+            
+                .project-link {
+                    color:  $secondary-color;
+                }
+            }
+
+            .project-btn:hover {
+                border: #000 2px solid;
+                background:  $secondary-color;
+
+                .project-link {
+                    color: #000;
+                }
+            }
+
+        
+        }
     }
 }
 
@@ -295,5 +335,6 @@ main {
     color: set-text-color($primary-color);
     height: 60px;
 }
+
 
 
